@@ -115,21 +115,12 @@ address {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* ------ TEMPORARY! */
+
 @media screen and (max-width: 1200px) {
   .feature-icon {
     display: none;
   }
 }
-/* ------ /TEMPORARY! */
-/* @media screen and (max-width: 320px) {
-  .modal {
-    width: 300px;
-  }
-  .modal-form-title {
-    font-size: 11px;
-  }
-} */
 
 @media screen and (max-width: 767px) {
   .container {
@@ -227,17 +218,14 @@ address {
   flex-direction: column;
   gap: 40px;
 }
-@media screen and (max-width: 427px) {
+/* @media screen and (max-width: 427px) {
   .mobile-phone-link {
-    display: block;
-    font-weight: 600;
-    font-size: 25px;
-    letter-spacing: 0.01em;
+    font-size: 20px;
   }
-}
+} */
 
 .mobile-phone-link {
-  display: block;
+  /* display: block; */
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
