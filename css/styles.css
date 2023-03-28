@@ -694,6 +694,31 @@ address {
   .mobile-menu-open {
     display: none;
   }
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: var(--main-title-color);
+    max-width: 496px;
+    margin-bottom: 36px;
+  }
+  .features {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .feature-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 736px;
+    column-gap: 24px;
+    row-gap: 72px;
+  }
+  .feature-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+  .feature-title {
+    text-align: start;
+  }
 }
 /* ------------ Header ------------------ */
 /* .header {
@@ -751,14 +776,14 @@ address {
 /* ---------------- /Header ------------------ */
 
 /* -------------Hero section ------------------ */
-.hero-title {
+/* .hero-title {
   font-size: 56px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--main-title-color);
   max-width: 496px;
   margin-bottom: 36px;
-}
+} */
 /* ------------- /Hero section ------------------ */
 
 /* ---------- Features section ------------------ */
