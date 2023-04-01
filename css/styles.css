@@ -177,11 +177,17 @@ address {
   right: 24px;
   width: 24px;
   height: 24px;
-  background-color: var(--cloud-color);
+  background: var(--cloud-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   padding: 0;
   line-height: 0;
+  transition: background var(--transition-dur-and-func),
+    border var(--transition-dur-and-func);
+}
+.mobile-menu-close-btn:is(:hover, :focus) {
+  background: var(--focus-color);
+  border: transparent;
 }
 .mobile-menu-list {
   display: flex;
@@ -191,9 +197,14 @@ address {
 .mobile-menu-link {
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.11;
+  line-height: 1.1;
   letter-spacing: 0.02em;
   color: var(--secondary-title-color);
+  transition: var(--transition-dur-and-func);
+}
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: var(--accent-color);
 }
 .current {
   color: var(--focus-color);
@@ -333,6 +344,9 @@ address {
 .feature-title {
   margin-bottom: 8px;
 }
+.feature.text {
+  font-weight: 500;
+}
 /* ----------------/Feature section ------------------ */
 
 /* ----------------Team section----------------------- */
@@ -376,6 +390,7 @@ address {
   height: 40px;
   border-radius: 50%;
   background-color: var(--accent-color);
+  transition: background-color var(--transition-dur-and-func);
 }
 .social-list-link:hover,
 .social-list-link:focus {
@@ -472,6 +487,10 @@ address {
   height: 40px;
   border-radius: 50%;
   background-color: var(--accent-color);
+  transition: background-color var(--transition-dur-and-func);
+}
+.footer-social-list-link:is(:hover, :focus) {
+  background-color: var(--footer-accent-color);
 }
 .footer-form-wrapper {
   display: flex;
@@ -490,6 +509,11 @@ address {
   border-radius: 4px;
   color: var(--main-title-color);
   background-color: transparent;
+  transition: border-color var(--transition-dur-and-func);
+}
+.footer-form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 .footer-form-input::placeholder {
   font-weight: 400;
@@ -514,6 +538,11 @@ address {
   color: var(--main-title-color);
   background: var(--accent-color);
   border-radius: 4px;
+  transition: background-color var(--transition-dur-and-func);
+}
+.subscribe-submit:hover,
+.subscribe-submit:focus {
+  background-color: var(--focus-color);
 }
 /* ------------- /Footer ----------- */
 
@@ -527,6 +556,8 @@ address {
   width: 100%;
   height: 100%;
   background: rgba(46, 47, 66, 0.4);
+  transition: opacity var(--transition-dur-and-func),
+    visibility var(--transition-dur-and-func);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -562,7 +593,20 @@ address {
   background-color: var(--footer-text-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0;
+  transition: background-color var(--transition-dur-and-func);
 }
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--focus-color);
+}
+.modal-close-btn-icon {
+  transition: fill var(--transition-dur-and-func);
+}
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+  fill: var(--cloud-color);
+}
+/* ------------------Modal form--------------- */
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -582,6 +626,11 @@ address {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 38px;
+  transition: border-color var(--transition-dur-and-func);
+}
+.modal-form-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 .modal-form-input-wrapper {
   display: block;
@@ -603,6 +652,10 @@ address {
   left: 16px;
   transform: translateY(-50%);
   fill: var(--secondary-title-color);
+  transition: fill var(--transition-dur-and-func);
+}
+.modal-form-input:focus + .modal-form-input-icon {
+  fill: var(--accent-color);
 }
 .modal-form-message {
   resize: none;
@@ -612,6 +665,11 @@ address {
   margin-bottom: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border-color var(--transition-dur-and-func);
+}
+.modal-form-message:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 .modal-form-message::placeholder {
   font-weight: 400;
@@ -648,6 +706,9 @@ address {
   background-repeat: no-repeat;
   background-position: center;
 }
+.modal-form-check:focus + .modal-form-check-desc::before {
+  border: 1.25px solid var(--focus-color);
+}
 .user-policy-link {
   font-weight: 400;
   font-size: 12px;
@@ -670,8 +731,13 @@ address {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   padding: 16px 32px;
   border-radius: 4px;
+  transition: background-color var(--transition-dur-and-func);
 }
-/* --------- /Modal window----------- */
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: var(--focus-color);
+}
+/* ----------------------- /Modal window----------- */
 
 /* ------------------------- /MOBILE --------------- */
 
@@ -757,10 +823,6 @@ address {
         rgba(46, 47, 66, 0.7)
       ),
       url("../images/hero-image-tablet-1x.jpg");
-    /* background-color: var(--secondary-title-color);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center; */
   }
   @media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
     screen and (min-resolution: 192dpi) and (min-width: 768px),
@@ -830,14 +892,7 @@ address {
     width: 264px;
     margin-right: 24px;
   }
-  .footer-social-list-link {
-    transition: background-color var(--transition-dur-and-func);
-  }
-  .footer-social-list-link:is(:hover, :focus) {
-    background-color: var(--footer-accent-color);
-  }
 }
-
 /* ---------------------------/TABLET ----------- */
 
 /* ------------------------------------- DESKTOP ----------- */
@@ -861,8 +916,8 @@ address {
   /* --------------- Hero section-------- */
   .hero {
     max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 188px 0;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -914,7 +969,7 @@ address {
     align-items: center;
     margin-bottom: 8px;
   }
-  .features .text {
+  .feature.text {
     font-weight: 400;
   }
   /* --------------- /Features section-------- */
@@ -946,22 +1001,14 @@ address {
   .footer-container {
     justify-content: space-between;
   }
-  .footer-form-input {
-    transition: border-color var(--transition-dur-and-func);
-  }
-  .footer-form-input:hover,
+
   .footer-form-input:focus {
     outline: none;
     border-color: var(--accent-color);
   }
   .subscribe-submit {
     cursor: pointer;
-    transition: background-color var(--transition-dur-and-func);
   }
-}
-.subscribe-submit:hover,
-.subscribe-submit:focus {
-  background-color: var(--focus-color);
 }
 
 /* ---------------------------- /DESKTOP ----------- */
