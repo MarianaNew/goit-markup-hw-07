@@ -125,10 +125,10 @@ address {
   }
 }
 /* ----------------------------MOBILE----------- */
+
 /* ----------------- Header -------------------- */
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 24px 0;
 }
 .header-container {
   display: flex;
@@ -188,6 +188,10 @@ address {
 .mobile-menu-close-btn:is(:hover, :focus) {
   background: var(--focus-color);
   border: transparent;
+}
+.mobile-menu-close-btn:hover .mobile-menu-close-icon,
+.mobile-menu-close-btn:focus .mobile-menu-close-icon {
+  fill: var(--cloud-color);
 }
 .mobile-menu-list {
   display: flex;
@@ -687,6 +691,11 @@ address {
   letter-spacing: 0.04em;
   color: rgba(117, 117, 117, 1);
 }
+@media screen and (max-width: 420px) {
+  .modal-form-check-desc {
+    font-size: 10px;
+  }
+}
 .modal-form-check-desc::before {
   display: block;
   width: 16px;
@@ -715,6 +724,11 @@ address {
   line-height: 1.33;
   letter-spacing: 0.04em;
   color: var(--accent-color);
+}
+@media screen and (max-width: 420px) {
+  .user-policy-link {
+    font-size: 10px;
+  }
 }
 .modal-form-submit {
   font-weight: 500;
@@ -751,12 +765,9 @@ address {
     display: none;
   }
   /* ------------ Header ------------------ */
-  @media screen and (min-width: 769px) and (max-width: 1199px) {
-    .header {
-      padding: 16px 0;
-    }
-  }
+
   .header {
+    padding: 12px 0;
     border-bottom: 1px solid var(--footer-text-color);
   }
   .header-navigation {
@@ -765,7 +776,6 @@ address {
   }
   .header-list {
     display: flex;
-    align-items: center;
     margin-left: 120px;
   }
   .header-link {
@@ -775,6 +785,7 @@ address {
     letter-spacing: 0.02em;
     color: var(--secondary-title-color);
     transition: color var(--transition-dur-and-func);
+    position: relative;
   }
   .header-link:hover,
   .header-link:focus {
@@ -782,11 +793,7 @@ address {
   }
   .header-item:not(:last-child) {
     margin-right: 40px;
-    position: relative;
-  }
-  .contact-list {
-    display: flex;
-    flex-direction: column;
+    /* position: relative; */
   }
   .contact-link {
     font-weight: 400;
@@ -800,9 +807,6 @@ address {
   .contact-link:focus {
     color: var(--focus-color);
   }
-  .current {
-    color: var(--focus-color);
-  }
   .current::after {
     content: "";
     display: block;
@@ -811,7 +815,7 @@ address {
     height: 4px;
     background: #404bbf;
     border-radius: 2px;
-    bottom: -24px;
+    bottom: -26px;
     left: 0;
   }
   /* ---------------- /Header ------------------ */
@@ -901,8 +905,14 @@ address {
   .container {
     max-width: 1158px;
   }
+  .header {
+    padding: 24px 0;
+  }
+  .header-list {
+    margin-left: 76px;
+  }
   .contact-list {
-    flex-direction: row;
+    display: flex;
     align-items: center;
   }
   .contact-link {
